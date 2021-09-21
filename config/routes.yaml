@@ -1,0 +1,15 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+index:
+    path: /login
+    controller: App\Controller\SecurityController::login
+dashboard:
+    path: /dashboard
+    controller: App\Controller\DashboardController::index
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+staff:
+    path: /staff
+    controller: App\Controller\StaffController::index

@@ -1,0 +1,59 @@
+{% extends 'nav.html.twig' %}
+
+{% block title %}Staff{% endblock %}
+ {% block active %}
+     <li  >
+         <a href="{{ path('dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Tableaux de bord</span></a>
+     </li>
+     <li >
+         <a href="{{ path('article_index') }}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Articles</span></a>
+     </li>
+     <li class="active" >
+         <a href="{{ path('staff_index') }}"><i class="fa fa-users"></i> <span class="nav-label">Équipe de travail</span></a>
+     </li>
+     <li >
+         <a href="{{ path('club_index') }}"><i class="fa fa-code"></i> <span class="nav-label">Club</span></a>
+     </li>
+ {% endblock %}
+{% block newscript %}
+    <script src="{{ asset('js/plugins/blueimp/jquery.blueimp-gallery.min.js') }}"></script>
+
+{% endblock %}
+{% block body %}
+
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <a href="{{ path('staff_index') }}" class="ared"><i class="fa fa-arrow-left"></i> back to list</a>
+                        <div class="float-right row ared">
+                            <button class="btn btn-white btn-xs" type="button"><a href="{{ path('staff_edit', {'id': staff.id}) }}" class="ared"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></button>
+                            {{ include('staff/_delete_form.html.twig') }}
+                        </div>
+                        <br><br><br>
+                        <div class="contact-box">
+                            <a class="row" href="#">
+                                <div class="col-4">
+                                    <div class="text-center">
+                                        <img alt="image" class="rounded-circle m-t-xs img-fluid" src="{{ asset('uploads/'~staff.photo )}}">
+
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <br>
+                                    <h3><span class="navy">{{ staff.firstname }}</span> {{ staff.lastname }}</h3>
+                                    <div class="m-t-xs font-bold">{{ staff.poste }}</div><br>
+                                    <p>{{ staff.description }}</p><br>
+                                    <address>
+                                        <i class="fa fa-envelope"></i> {{ staff.Email }} <br>
+                                        <i class="fa fa-phone"></i> {{ staff.phoneNumber }} <br>
+                                    </address>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+{% endblock %}

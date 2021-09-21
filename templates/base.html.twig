@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Elife!{% endblock %}</title>
+        <link rel="alternate icon" class="js-site-favicon" type="image/png" href="{{ asset('img/favicon-32x32.png')}}">
+
+        {% block stylesheets %}
+            <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
+            <link href="{{ asset('css/animate.css')}}" rel="stylesheet">
+            <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-3.1.1.min.js')}}"></script>
+            <script src="{{ asset('js/popper.min.js')}}"></script>
+            <script src="{{ asset('js/bootstrap.js')}}"></script>
+            <script src="{{ asset('js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+        {% endblock %}
+    </head>
+    <body class="gray-bg">
+    <div id="wrapper">
+        {% block body %}{% endblock %}
+    </div>
+    </body>
+</html>

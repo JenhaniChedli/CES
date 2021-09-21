@@ -1,0 +1,41 @@
+
+<div class="ibox-content">
+    {{ form_start(form) }}
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Titre :</label>
+        <div class="col-sm-10">{{ form_widget(form.titre) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Description :</label>
+        <div class="col-sm-10">{{ form_widget(form.description) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Create By :</label>
+        <div class="col-sm-10">{{ form_widget(form.createby) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Type d'Article :</label>
+        <div class="col-sm-10">{{ form_widget(form.type) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">images :</label>
+        <div class="col-sm-10">{{ form_widget(form.images) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Videos :</label>
+        <div class="col-sm-10">{{ form_widget(form.videos) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Date de Creation :</label>
+        <div class="col-sm-10">{{ form_widget(form.datedecreation) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <button class="btn">{{ button_label|default('Save' ,{'attr': {'class': 'form-control'}}) }}</button>
+    {{ form_end(form) }}
+</div>

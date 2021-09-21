@@ -1,0 +1,59 @@
+{% extends 'nav.html.twig' %}
+
+{% block title %}Club{% endblock %}
+{% block newscript %}
+    <script src="{{ asset('js/plugins/blueimp/jquery.blueimp-gallery.min.js') }}"></script>
+
+{% endblock %}
+ {% block active %}
+     <li  >
+         <a href="{{ path('dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Tableaux de bord</span></a>
+     </li>
+     <li >
+         <a href="{{ path('article_index') }}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Articles</span></a>
+     </li>
+     <li >
+         <a href="{{ path('staff_index') }}"><i class="fa fa-users"></i> <span class="nav-label">Équipe de travail</span></a>
+     </li>
+     <li class="active">
+         <a href="{{ path('club_index') }}"><i class="fa fa-code"></i> <span class="nav-label">Club</span></a>
+     </li>
+ {% endblock %}
+{% block body %}
+    <div class="wrapper wrapper-content  animated fadeInRight article">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <a href="{{ path('club_index') }}" class="ared"><i class="fa fa-arrow-left"></i> back to list</a>
+                        <div class="float-right row ared">
+                            <button class="btn btn-white btn-xs" type="button"><a href="{{ path('club_edit', {'id': club.id}) }}" class="ared"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></button>
+                            {{ include('club/_delete_form.html.twig') }}
+                        </div>
+                        <br>
+                        <div class="text-center ">
+                            <span class="text-muted"><i class="fa fa-clock-o"></i> {{ club.datedecreation ? club.datedecreation|date('Y-m-d') : '' }}</span>
+                            <h1>
+                                Club {{ club.Nom }}
+                            </h1>
+                            <div class="lightBoxGallery">
+                                <a href="{{ asset('uploads/'~club.logo )}}" title="Logo {{ club.Nom }} " data-gallery=""><img src="{{ asset('uploads/'~club.logo )}}" alt="logo" width="300px" height="300px"></a>
+                          </div>
+                        </div>
+                        <p>&emsp;&emsp;&emsp;
+                            {{ club.description }}
+                        </p>
+                        <hr>
+                        <p>
+                            Link d'inscription :  <a href="{{ club.linkdinscri }}" class="ared" target="_blank"> Here </a> .
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

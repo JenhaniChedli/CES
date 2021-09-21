@@ -1,0 +1,42 @@
+<div class="ibox-content">
+    {{ form_start(form) }}
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">First Name :</label>
+        <div class="col-sm-10">{{ form_widget(form.firstname) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">last Name :</label>
+        <div class="col-sm-10">{{ form_widget(form.lastname) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Email :</label>
+        <div class="col-sm-10">{{ form_widget(form.Email) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Phone Number :</label>
+        <div class="col-sm-10">{{ form_widget(form.phoneNumber) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Poste :</label>
+        <div class="col-sm-10">{{ form_widget(form.poste) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Description :</label>
+        <div class="col-sm-10">{{ form_widget(form.description) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+
+    <div class="form-group  row">
+        <label class="col-sm-2 col-form-label">Photo :</label>
+        <div class="col-sm-10">{{ form_widget(form.photo) }}</div>
+    </div>
+    <div class="hr-line-dashed"></div>
+
+    <button class="btn">{{ button_label|default('Save' ,{'attr': {'class': 'form-control'}}) }}</button>
+    {{ form_end(form) }}
+</div>

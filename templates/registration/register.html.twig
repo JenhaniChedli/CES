@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Elife | Register{% endblock %}
+{% block nav %}{% endblock %}
+{% block body %}
+    {% if app.user %}
+
+
+        <div class="middle-box text-center loginscreen animated fadeInDown">
+            <div>
+                <div>
+                    <img src="{{ asset('img/elife.png')}}" class=" middle-box">
+                </div>
+                <h3>Register to ES+</h3>
+                    {{ form_start(registrationForm) }}
+                <div class="form-group">
+                {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control','placeholder':'Email'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control','placeholder':'Password'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(registrationForm.agreeTerms)}}
+                    <label> Agree the terms and policy </label>
+                </div>
+                    <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+                    {{ form_end(registrationForm) }}
+            </div>
+        </div>
+
+
+    {% else %}
+        <script> window.location.href ="{{ path('index')}}"</script>
+    {% endif %}
+{% endblock %}
+{% block footer %} <div class="footer">
+    <div class="float-right">
+        <strong>Copyright</strong> Club Elife Tech Up &copy; 2021
+    </div>
+    <div>
+        <img src="{{ asset('img/favicon-32x32.png')}}" height="20px">
+        Centre <strong>Elife</strong> Siliana.
+    </div>
+    </div>{% endblock %}

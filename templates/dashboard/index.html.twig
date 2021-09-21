@@ -1,0 +1,62 @@
+{% extends 'nav.html.twig' %}
+
+{% block title %}Elife | Dashboard{% endblock %}
+ {% block active %}
+     <li class="active" >
+         <a href="{{ path('dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Tableaux de bord</span></a>
+     </li>
+     <li>
+         <a href="{{ path('article_index') }}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Articles</span></a>
+     </li>
+     <li>
+         <a href="{{ path('staff_index') }}"><i class="fa fa-users"></i> <span class="nav-label">Équipe de travail</span></a>
+     </li>
+     <li>
+         <a href="{{ path('club_index') }}"><i class="fa fa-code"></i> <span class="nav-label">Club</span></a>
+     </li>
+ {% endblock %}
+{% block body %}
+{% if not app.user %}
+    <script> window.location.href ="{{ path('app_login')}}"</script>
+{% else %}
+<div class="row" >
+    <div class="col-lg-2">
+        <div  class="widget style1 bg-navy" >
+            <div class="row vertical-align">
+                <div class="col-3">
+                    <i class="fa fa-newspaper-o fa-3x"></i>
+                </div>
+                <div class="col-9 text-right">
+                    <h2 class="font-bold">{{ totalArticles }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div  class="widget style1 bg-navy" >
+            <div class="row vertical-align">
+                <div class="col-3">
+                    <i class="fa fa-users fa-3x"></i>
+                </div>
+                <div class="col-9 text-right">
+                    <h2 class="font-bold">{{ totalStaffs }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div  class="widget style1 bg-navy" >
+            <div class="row vertical-align">
+                <div class="col-3">
+                    <i class="fa fa-code fa-3x"></i>
+                </div>
+                <div class="col-9 text-right">
+                    <h2 class="font-bold">{{ totalClubs }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+        {% endif %}
+{% endblock %}
